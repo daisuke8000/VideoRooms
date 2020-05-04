@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # ログイン機能
 gem 'devise'
+# 管理者権限
+gem 'activeadmin'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
