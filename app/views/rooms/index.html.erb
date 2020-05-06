@@ -1,0 +1,17 @@
+<%= render 'shared/flash_messages' %>
+<h2>RoomsIndex</h2>
+<p><%= link_to "新しい部屋を作成する", new_room_path %></p>
+<% @rooms.each do |room| %>
+  <table>
+  <tbody>
+  <tr>
+    <td><%= room.title %></td>
+    <td>
+      <%= link_to "詳細", room_path(room) %>
+      <%= link_to "編集", edit_room_path(room) %>
+      <%= link_to "削除", room_path(room), method: :delete, data: {confirm: "削除しますか？"} %>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+<% end %>
