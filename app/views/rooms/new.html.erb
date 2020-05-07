@@ -1,0 +1,7 @@
+<h3>新しい部屋の作成</h3>
+<%= form_with model: @room, local: true do|f| %>
+  <p>部屋の名前</p>
+  <%= f.text_field :title %>
+  <%= f.submit value: "送信"%>
+<% end %>
+<%= link_to "部屋の一覧画面へ戻る", rooms_path %>

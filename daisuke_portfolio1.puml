@@ -1,0 +1,39 @@
+package devise {
+
+    entity "users" as users {
+      + ID 
+      --
+      name
+      email
+      encrypted_password
+      reset_password_sent_at
+      remember_created_at
+      created_at
+      updated_at
+    }
+
+}
+
+package RoomVideo {
+    
+    entity "rooms" as rooms {
+      + ID
+      --
+      user_id [FK]
+      room_name
+      created_at
+      updated_at
+    }
+    
+    entity "videos" as videos {
+      + ID 
+      --
+      room_id [FK]
+      name
+      created_at
+      updated_at
+    }
+}
+
+users --|{ rooms
+rooms --|{ videos
