@@ -1,3 +1,6 @@
 <h1>Rooms#Show : <%= @room.room_name %></h1>
 <p><span>email: </span><%= @user.email %></p>
+<% @videos.each do |video| %>
+  <p><span>動画 : </span><%= link_to video.name, video_path(video.id) %></p>
+<% end %>
 <p><%= link_to "動画を貼る", new_video_path %></p>

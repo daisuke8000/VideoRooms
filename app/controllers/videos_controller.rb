@@ -10,7 +10,8 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    @video.room_id = @room.id # これで値渡せず
+    @video.room_id = Ro
+    binding.pry
     if @video.save
       redirect_to videos_path, notice: "新規の動画が投稿されました。"
     else
@@ -25,7 +26,7 @@ class VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:name)
+    params.require(:video).permit(:room_id, :name)
   end
 
 end

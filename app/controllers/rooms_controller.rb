@@ -11,9 +11,11 @@ class RoomsController < ApplicationController
   def create
     #　フォームから送られてくるストロングパラメータ
     @room = Room.new(room_params)
+    ###binding.pry
     #　deviceのhelpermethod "current_user(サインインしているユーザーを取得)"
     #　"current_user.id"　でユーザーIDを追加代入（フォームからは渡されていないパラメータの為）
     @room.user_id = current_user.id
+    ###binding.pry
     if @room.save
       redirect_to rooms_path,notice: "新規の部屋が作成されました。"
     else
@@ -28,6 +30,7 @@ class RoomsController < ApplicationController
     # "room" に紐づく親要素は "user" (一意)のみのため、単数形 "user" で呼び出す
     # model "user.rb","room.rb" を参照
     @user = @room.user
+    @videos = @room.videos
   end
 
   def update
