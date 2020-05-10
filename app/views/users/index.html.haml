@@ -1,0 +1,7 @@
+%h1 Users#index
+%p Find me in app/views/users/index.html.erb
+- @users.each do |user|
+  %hr/
+  %p
+    %span email:
+    = link_to user.email, user_path(user.id)

@@ -1,0 +1,4 @@
+- flash.each do |msg_type, msg|
+  #alert{:class => "alert alert-#{msg_type}", :role => "alert"}
+    %a.close{"data-dismiss" => "alert", :href => "#"} ×
+    = msg
