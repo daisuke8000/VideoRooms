@@ -1,18 +1,12 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  def new
-    @video = Video.new
-  end
-
-  def index
-    @videos = Video.all
-  end
 
   def create
-    @video = Video.new(video_params)
-    @video.room_id = Room.find[:id]
+    @room = Room.find(params[:room_id])
+    @video = @room.videos.build(video_params)
     if @video.save
-      redirect_to videos_path, notice: "新規の動画が投稿されました。"
+      flash[:notice] = "新規の動画が投稿されました。"
+      redirect_to controller: "rooms", action: "show", id: @room.id
     else
       flash.now[:alert] = "動画の投稿に失敗しました。"
       render :new
@@ -20,12 +14,18 @@ class VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.find(params[:room_id])
+  end
+
+  def destroy
+    video = Video.find(params[:room_id])
+    video.destroy
+    redirect_to room_path
   end
 
   private
   def video_params
-    params.require(:video).permit(:room_id, :video_name)
+    params.require(:video).permit(:video_name)
   end
 
 end

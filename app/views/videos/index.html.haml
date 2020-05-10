@@ -1,1 +1,12 @@
-= render partial: 'shared/vi_index'
+/= render partial: 'shared/vi_index'
+%h1 Videos#Index
+%p= link_to "新しい動画を投稿する", new_room_video_path(@room.id)
+- @videos.each do |video|
+  %table
+    %tbody
+      %tr
+        %td= video.name
+        %td
+          = link_to "詳細", video_path(video)
+          = link_to "編集", edit_video_path(video)
+          = link_to "削除", video_path(video), method: :delete, data: {confirm: "削除しますか？"}

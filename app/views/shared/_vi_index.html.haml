@@ -1,5 +1,5 @@
 %h1 Videos#Index
-%p= link_to "新しい動画を投稿する", new_video_path
+%p= link_to "新しい動画を投稿する", new_room_video_path(@room.id)
 - @videos.each do |video|
   %table
     %tbody
