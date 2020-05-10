@@ -10,6 +10,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.room_id = Room.find[:id]
     if @video.save
       redirect_to videos_path, notice: "新規の動画が投稿されました。"
     else

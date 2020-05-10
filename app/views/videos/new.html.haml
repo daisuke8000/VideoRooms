@@ -1,6 +1,1 @@
-%h1 Videos#New
-= form_with model: @video, local: true do|f|
-  %p 動画の名前
-  = f.text_field :name
-  = f.submit value: "送信"
-= link_to "動画一覧画面へ戻る", videos_path
+= render partial: 'shared/vi_new'
