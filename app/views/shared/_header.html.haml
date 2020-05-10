@@ -1,0 +1,24 @@
+%body
+  %header
+    %nav.navbar.navbar-expand.navbar-light
+      = link_to "ホーム画面", root_path, class: 'navbar-brand'
+      #Navber
+        %ul.navbar-nav
+          - if user_signed_in?
+            %li.nav-item.active
+              = link_to "部屋の作成", new_room_path, class: 'nav-link'
+            %li.nav-item.active
+              = link_to "マイページ", user_path(current_user.id), class: 'nav-link'
+            %li.nav-item.active
+              = link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link'
+            %li.nav-item.active
+              = link_to "room一覧", rooms_path, class: 'nav-link'
+            %li.nav-item.active
+              = link_to "user一覧", users_path, class: 'nav-link'
+            %li.nav-item.active
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
+          - else
+            %li.nav-item.active
+              = link_to "新規登録", new_user_registration_path, class: 'btn nav-link'
+            %li.nav-item.active
+              = link_to "ログイン", new_user_session_path, class: 'nav-link'

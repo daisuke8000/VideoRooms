@@ -1,7 +1,0 @@
-<h1>Videos#New</h1>
-<%= form_with model: @video, local: true do|f| %>
-  <p>動画の名前</p>
-  <%= f.text_field :name %>
-  <%= f.submit value: "送信"%>
-<% end %>
-<%= link_to "動画一覧画面へ戻る", videos_path %>

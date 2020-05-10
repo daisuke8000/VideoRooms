@@ -1,0 +1,11 @@
+%h1 Users#show
+%p Find me in app/views/users/show.html.erb
+%hr/
+%p
+  %span email:
+  = @user.email
+- @rooms.each do |room|
+  %hr/
+  %p
+    %span 部屋名 :
+    = link_to room.room_name, room_path(room.id)

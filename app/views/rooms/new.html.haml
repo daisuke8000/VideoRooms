@@ -1,0 +1,6 @@
+%h1 Rooms#New
+= form_with model: @room, local: true do|f|
+  %p 部屋の名前
+  = f.text_field :room_name
+  = f.submit value: "送信"
+= link_to "部屋の一覧画面へ戻る", rooms_path
