@@ -8,3 +8,5 @@
     %span 動画 :
     = link_to video.name, video_path(video.id)
 %p= link_to "動画を貼る", new_video_path
+= render partial: 'shared/vi_index'
+= render partial: 'shared/vi_new'
