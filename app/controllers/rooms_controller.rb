@@ -20,7 +20,8 @@ class RoomsController < ApplicationController
       redirect_to rooms_path,notice: "新規の部屋が作成されました。"
     else
       flash.now[:alert] = "新規の部屋の作成に失敗しました。"
-      render :new
+      @rooms = Room.all
+      render :index
     end
   end
 
@@ -30,7 +31,7 @@ class RoomsController < ApplicationController
     # "room" に紐づく親要素は "user" (一意)のみのため、単数形 "user" で呼び出す
     # model "user.rb","room.rb" を参照
     @user = @room.user
-    @videos = @room.videos
+    @video = Video.new
   end
 
   def update
@@ -43,7 +44,6 @@ class RoomsController < ApplicationController
       render :edit
     end
   end
-
 
   def edit
     @room = Room.find(params[:id])
@@ -60,6 +60,5 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:room_name)
   end
-
 
 end

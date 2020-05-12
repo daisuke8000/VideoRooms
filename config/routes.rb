@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #root to: 'homes#index'
   root 'homes#index'
   resources :users
-  resources :rooms
-  resources :videos
+  resources :rooms do
+    resources :videos
+  end
 end
