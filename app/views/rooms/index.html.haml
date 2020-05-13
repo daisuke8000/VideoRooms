@@ -4,17 +4,5 @@
   NowUser : #{current_user.email}
 %p Find me in app/views/rooms/index.html.erb
 %p= link_to "新しい部屋を作成する", new_room_path
-- @rooms.each do |room|
-  %table
-    %tbody
-      %tr
-        %td
-          %span 部屋ID:
-          = room.id
-          %span 部屋名:
-          = link_to room.room_name, room_path(room.id)
-          %span email:
-          = link_to room.user.email, user_path(room.user.id)
-        %td
-          = link_to "編集", edit_room_path(room)
-          = link_to "削除", room_path(room), method: :delete, data: {confirm: "削除しますか？"}
+/複数系のインスタンス変数を部分テンプレートに渡すときはcollection(変数名の指定は:as => "****")
+= render partial: 'shared/room_all', collection: @rooms, :as => "room"

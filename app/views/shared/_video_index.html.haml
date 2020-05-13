@@ -1,0 +1,6 @@
+%p
+  %span 動画ID :
+  = video.id
+  %span 動画名 :
+  = link_to video.video_name, room_video_path(video.id)
+  = link_to "削除", room_video_path(video), method: :delete, data: {confirm: "削除しますか？"}

@@ -4,16 +4,7 @@
 %p
   %span email:
   = @user.email
-
-= form_with model:[@room,@video], local: true do |f|
-  %p 動画の名前
-  = f.text_field :video_name
-  = f.submit value: "送信"
-%p= link_to "部屋一覧", rooms_path
-- @room.videos.each do |video|
-  %p
-    %span 動画ID :
-    = video.id
-    %span 動画名 :
-    = link_to video.video_name, room_video_path(video.id)
-    = link_to "削除", room_video_path(video), method: :delete, data: {confirm: "削除しますか？"}
+%h1 Videos#New
+= render partial: 'shared/video_new'
+%h1 Videos#Index
+= render partial: 'shared/video_index', collection: @room.videos, :as => "video"

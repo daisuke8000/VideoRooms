@@ -1,0 +1,13 @@
+%table
+  %tbody
+    %tr
+      %td
+        %span 部屋ID:
+        = room.id
+        %span 部屋名:
+        = link_to room.room_name, room_path(room.id)
+        %span email:
+        = link_to room.user.email, user_path(room.user.id)
+        %td
+          = link_to "編集", edit_room_path(room)
+          = link_to "削除", room_path(room), method: :delete, data: {confirm: "削除しますか？"}
