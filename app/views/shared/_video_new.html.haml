@@ -1,5 +1,5 @@
-= form_with model:[@room,@video], local: true do |f|
+= form_with model: [@room,@video], local: true do |f|
   %p 動画の名前
   = f.text_field :video_name
-  = f.submit value: "送信"
-%p= link_to "部屋一覧", rooms_path
+  = f.submit value: '送信'
+%p= link_to '部屋一覧', rooms_path
