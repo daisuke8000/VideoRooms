@@ -10,4 +10,4 @@
         = link_to room.user.email, user_path(room.user.id)
         %td
           = link_to '編集', edit_room_path(room)
-          = link_to '削除', room_path(room), method: :delete, data: {confirm: '削除しますか？'}
+          = link_to '削除', room_path(room), method: :delete, data: { confirm: '削除しますか？' }
