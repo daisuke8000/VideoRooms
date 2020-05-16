@@ -17,6 +17,23 @@ class VideosController < ApplicationController
     @video = Video.find(params[:room_id])
   end
 
+  def update
+    @room = Room.find(params[:room_id])
+    @video = Video.find(params[:id])
+    if @video.update_attributes(video_params)
+      redirect_to controller: "rooms", action: "show", id: @room.id
+      flash[:success] = "動画を編集しました。"
+    else
+      flash.now[:alert] = "動画の編集に失敗しました。"
+      render :edit
+    end
+  end
+
+  def edit
+    @room = Room.find(params[:id])
+    @video = Video.find(params[:room_id])
+  end
+
   def destroy
     video = Video.find(params[:room_id])
     video.destroy

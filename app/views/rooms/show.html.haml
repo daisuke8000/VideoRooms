@@ -1,10 +1,10 @@
 = render 'shared/flash_messages'
 %h1
   Rooms#Show : #{@room.room_name}
-%p
-  %span email:
-  = @user.email
+/%p
+/  %span email:
+/  = @user.email
 %h1 Videos#New
-= render partial: 'shared/video_new'
+= render partial: 'shared/form_video'
 %h1 Videos#Index
-= render partial: 'shared/video_index', collection: @room.videos, as: 'video'
+= render partial: 'shared/video_all', collection: @room.videos, as: 'video'

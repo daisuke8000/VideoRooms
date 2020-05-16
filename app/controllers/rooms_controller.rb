@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
     @room.user_id = current_user.id
     ###binding.pry
     if @room.save
-      redirect_to rooms_path,notice: "新規の部屋が作成されました。"
+      redirect_to rooms_path, notice: "新規の部屋が作成されました。"
     else
       flash.now[:alert] = "新規の部屋の作成に失敗しました。"
       @rooms = Room.all
