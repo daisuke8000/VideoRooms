@@ -5,10 +5,10 @@ class VideosController < ApplicationController
     @room = Room.find(params[:room_id])
     @video = @room.videos.build(video_params)
     if @video.save
-      flash[:notice] = "新規の動画が投稿されました。"
-      redirect_to controller: "rooms", action: "show", id: @room.id
+      flash[:notice] = '新規の動画が投稿されました。'
+      redirect_to controller: 'rooms', action: 'show', id: @room.id
     else
-      flash.now[:alert] = "動画の投稿に失敗しました。"
+      flash.now[:alert] = '動画の投稿に失敗しました。'
       render :new
     end
   end
@@ -21,10 +21,10 @@ class VideosController < ApplicationController
     @room = Room.find(params[:room_id])
     @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
-      redirect_to controller: "rooms", action: "show", id: @room.id
-      flash[:success] = "動画を編集しました。"
+      redirect_to controller: 'rooms', action: 'show', id: @room.id
+      flash[:success] = '動画を編集しました。'
     else
-      flash.now[:alert] = "動画の編集に失敗しました。"
+      flash.now[:alert] = '動画の編集に失敗しました。'
       render :edit
     end
   end
