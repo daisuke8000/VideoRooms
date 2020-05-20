@@ -30,6 +30,9 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 # erb →　Haml
 gem 'haml-rails'
+#　環境変数
+gem 'dotenv-rails'
+# google-api
 gem 'omniauth-google-oauth2'
 gem 'google-api-client'
 group :development, :test do
