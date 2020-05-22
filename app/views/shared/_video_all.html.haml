@@ -3,11 +3,11 @@
   = video.id
   %span 動画名 :
   = link_to video.video_name, room_video_path(video.id)
-  %iframe{allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
+  %iframe{ allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
    allowfullscreen: '',
    frameborder: '0',
    height: '315',
-   src: "https://www.youtube.com/embed/#{video.youtube_url}",
-   width: '560'}
+   src: "https://www.youtube.com/embed/#{ video.youtube_url }",
+   width: '560' }
   = link_to '編集', edit_room_video_path(video)
   = link_to '削除', room_video_path(video), method: :delete, data: { confirm: '削除しますか？' }
