@@ -3,9 +3,8 @@ class VideosController < ApplicationController
 
   def create
     @room = Room.find(params[:room_id])
-    url = params[:video][:youtube_url]
     @video = @room.videos.build(video_params)
-    @video.youtube_url = url.match(/v=(.{11})/)[1]
+    @video.youtube_url = @video.channel
     if @video.save
       flash[:notice] = '新規の動画が投稿されました。'
       redirect_to controller: 'rooms', action: 'show', id: @room.id
