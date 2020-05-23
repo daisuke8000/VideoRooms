@@ -1,5 +1,7 @@
 = form_with model: [@room, @video], local: true do |f|
   %p 動画の名前
   = f.text_field :video_name
+  %p 動画のURLを入力
+  = f.text_field :youtube_url
   = f.submit value: '送信'
 %p= link_to '部屋一覧', rooms_path

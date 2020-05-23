@@ -4,6 +4,7 @@ class VideosController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @video = @room.videos.build(video_params)
+    @video.youtube_url = @video.fetch_from_url
     if @video.save
       flash[:notice] = '新規の動画が投稿されました。'
       redirect_to controller: 'rooms', action: 'show', id: @room.id
