@@ -1,3 +1,227 @@
 = render 'shared/flash_messages'
 %h1 Homes#Index
 %p= link_to 'Rooms_Indexへ移動する', rooms_path
+\# 画像対応版
+.wrapper
+  / Navbar
+  %nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+    / Left navbar links
+    %ul.navbar-nav
+      %li.nav-item
+        %a.nav-link{"data-widget" => "pushmenu", :href => "#"}
+          %i.fa.fa-bars
+      %li.nav-item.d-none.d-sm-inline-block
+        %a.nav-link{:href => "index3.html"} Home
+      %li.nav-item.d-none.d-sm-inline-block
+        %a.nav-link{:href => "#"} Contact
+    / SEARCH FORM
+    %form.form-inline.ml-3
+      .input-group.input-group-sm
+        %input.form-control.form-control-navbar{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        .input-group-append
+          %button.btn.btn-navbar{:type => "submit"}
+            %i.fa.fa-search
+    / Right navbar links
+    %ul.navbar-nav.ml-auto
+      / Messages Dropdown Menu
+      %li.nav-item.dropdown
+        %a.nav-link{"data-toggle" => "dropdown", :href => "#"}
+          %i.fa.fa-comments-o
+          %span.badge.badge-danger.navbar-badge 3
+        .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+          %a.dropdown-item{:href => "#"}
+            / Message Start
+            .media
+              = image_tag "user1-128x128.jpg", alt: "User Avatar", class: "img-size-50 mr-3 img-circle"
+              .media-body
+                %h3.dropdown-item-title
+                  Brad Diesel
+                  %span.float-right.text-sm.text-danger
+                    %i.fa.fa-star
+                %p.text-sm Call me whenever you can...
+                %p.text-sm.text-muted
+                  %i.fa.fa-clock-o.mr-1
+                  4 Hours Ago
+            / Message End
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"}
+            / Message Start
+            .media
+              = image_tag "user8-128x128.jpg", alt: "User Avatar", class: "img-size-50 img-circle mr-3"
+              .media-body
+                %h3.dropdown-item-title
+                  John Pierce
+                  %span.float-right.text-sm.text-muted
+                    %i.fa.fa-star
+                %p.text-sm I got your message bro
+                %p.text-sm.text-muted
+                  %i.fa.fa-clock-o.mr-1
+                  4 Hours Ago
+            / Message End
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"}
+            / Message Start
+            .media
+              = image_tag "user3-128x128.jpg", alt: "User Avatar", class: "img-size-50 img-circle mr-3"
+              .media-body
+                %h3.dropdown-item-title
+                  Nora Silvester
+                  %span.float-right.text-sm.text-warning
+                    %i.fa.fa-star
+                %p.text-sm The subject goes here
+                %p.text-sm.text-muted
+                  %i.fa.fa-clock-o.mr-1
+                  4 Hours Ago
+            / Message End
+          .dropdown-divider
+          %a.dropdown-item.dropdown-footer{:href => "#"} See All Messages
+      / Notifications Dropdown Menu
+      %li.nav-item.dropdown
+        %a.nav-link{"data-toggle" => "dropdown", :href => "#"}
+          %i.fa.fa-bell-o
+          %span.badge.badge-warning.navbar-badge 15
+        .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+          %span.dropdown-header 15 Notifications
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"}
+            %i.fa.fa-envelope.mr-2
+            4 new messages
+            %span.float-right.text-muted.text-sm 3 mins
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"}
+            %i.fa.fa-users.mr-2
+            8 friend requests
+            %span.float-right.text-muted.text-sm 12 hours
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"}
+            %i.fa.fa-file.mr-2
+            3 new reports
+            %span.float-right.text-muted.text-sm 2 days
+          .dropdown-divider
+          %a.dropdown-item.dropdown-footer{:href => "#"} See All Notifications
+      %li.nav-item
+        %a.nav-link{"data-slide" => "true", "data-widget" => "control-sidebar", :href => "#"}
+          %i.fa.fa-th-large
+  / /.navbar
+  / Main Sidebar Container
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+    / Brand Logo
+    %a.brand-link{:href => "index3.html"}
+      = image_tag "AdminLTELogo.png", alt: "AdminLTE Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8"
+      %span.brand-text.font-weight-light AdminLTE 3
+    / Sidebar
+    .sidebar
+      / Sidebar user panel (optional)
+      .user-panel.mt-3.pb-3.mb-3.d-flex
+        .image
+          = image_tag "user2-160x160.jpg", alt: "User Image", class: "img-circle elevation-2"
+        .info
+          %a.d-block{:href => "#"} Alexander Pierce
+      / Sidebar Menu
+      %nav.mt-2
+        %ul.nav.nav-pills.nav-sidebar.flex-column{"data-accordion" => "false", "data-widget" => "treeview", :role => "menu"}
+          /
+            Add icons to the links using the .nav-icon class
+            with font-awesome or any other icon font library
+          %li.nav-item.has-treeview.menu-open
+            %a.nav-link.active{:href => "#"}
+              %i.nav-icon.fa.fa-dashboard
+              %p
+                Starter Pages
+                %i.right.fa.fa-angle-left
+            %ul.nav.nav-treeview
+              %li.nav-item
+                %a.nav-link.active{:href => "#"}
+                  %i.fa.fa-circle-o.nav-icon
+                  %p Active Page
+              %li.nav-item
+                %a.nav-link{:href => "#"}
+                  %i.fa.fa-circle-o.nav-icon
+                  %p Inactive Page
+          %li.nav-item
+            %a.nav-link{:href => "#"}
+              %i.nav-icon.fa.fa-th
+              %p
+                Simple Link
+                %span.right.badge.badge-danger New
+      / /.sidebar-menu
+    / /.sidebar
+  / Content Wrapper. Contains page content
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            %h1.m-0.text-dark Starter Page
+          / /.col
+          .col-sm-6
+            %ol.breadcrumb.float-sm-right
+              %li.breadcrumb-item
+                %a{:href => "#"} Home
+              %li.breadcrumb-item.active Starter Page
+          / /.col
+        / /.row
+      / /.container-fluid
+    / /.content-header
+    / Main content
+    .content
+      .container-fluid
+        .row
+          .col-lg-6
+            .card
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            .card.card-primary.card-outline
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            / /.card
+          / /.col-md-6
+          .col-lg-6
+            .card
+              .card-header
+                %h5.m-0 Featured
+              .card-body
+                %h6.card-title Special title treatment
+                %p.card-text With supporting text below as a natural lead-in to additional content.
+                %a.btn.btn-primary{:href => "#"} Go somewhere
+            .card.card-primary.card-outline
+              .card-header
+                %h5.m-0 Featured
+              .card-body
+                %h6.card-title Special title treatment
+                %p.card-text With supporting text below as a natural lead-in to additional content.
+                %a.btn.btn-primary{:href => "#"} Go somewhere
+          / /.col-md-6
+        / /.row
+      / /.container-fluid
+    / /.content
+  / /.content-wrapper
+  / Control Sidebar
+  %aside.control-sidebar.control-sidebar-dark
+    / Control sidebar content goes here
+    .p-3
+      %h5 Title
+      %p Sidebar content
+  / /.control-sidebar
+  / Main Footer
+  %footer.main-footer
+    / To the right
+    .float-right.d-none.d-sm-inline
+      Anything you want
+    / Default to the left
+    %strong
+      Copyright © 2014-2018
+      = succeed "." do
+        %a{:href => "https://adminlte.io"} AdminLTE.io
+    All rights reserved.

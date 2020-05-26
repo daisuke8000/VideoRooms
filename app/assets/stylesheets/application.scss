@@ -14,7 +14,11 @@
  *= require_self
  */
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/dist/css/bootstrap.min'; /*←新たに追加*/
+@import 'admin-lte/dist/css/adminlte.min'; /*←新たに追加*/
+//@import 'admin-lte/plugins/iCheck/all'; /*←新たに追加*/
+//@import "font-awesome/css/font-awesome.min"; /*←新たに追加*/
 
 // ログイン画面
 
