@@ -1,8 +1,13 @@
 = render 'shared/flash_messages'
-%h1 Rooms#index
-%p
-  NowUser : #{current_user.email}
-%p Find me in app/views/rooms/index.html.erb
-%p= link_to '新しい部屋を作成する', new_room_path
-/複数系のインスタンス変数を部分テンプレートに渡すときはcollection(変数名の指定は:as => "****")
-= render partial: 'shared/room_all', collection: @rooms, as: 'room'
+.content-wrapper
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          %h1.m-0.text-dark Room list
+          %p= link_to '新しい部屋を作成する', new_room_path
+        .col-sm-6
+          %ol.breadcrumb.float-sm-right
+            %p NowUser : #{current_user.email}
+          /複数系のインスタンス変数を部分テンプレートに渡すときはcollection(変数名の指定はas: "****")
+        = render partial: 'shared/room_all', collection: @rooms, as: 'room'
