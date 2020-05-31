@@ -1,13 +1,28 @@
-%table
-  %tbody
-    %tr
-      %td
-        %span 部屋ID:
-        = room.id
-        %span 部屋名:
-        = link_to room.room_name, room_path(room.id)
-        %span email:
-        = link_to room.user.email, user_path(room.user.id)
-        %td
-          = link_to '編集', edit_room_path(room)
-          = link_to '削除', room_path(room), method: :delete, data: { confirm: '削除しますか？' }
+.content-wrapper
+  / Content Header (Page header)
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          %h1.m-0.text-dark PublicVideo
+  - @rooms.each do |room|
+    .content
+      .row
+        .col-lg-6
+          .card.card-primary.card-outline
+            .card-body
+              %h5.card-title #{room.room_name}
+              %p.card-text
+                Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              %a.nav-link{ href: room_path(room.id) } ShowRoom
+
+        /%span 部屋ID:
+        /= room.id
+        /%span 部屋名:
+        /= link_to room.room_name, room_path(room.id)
+        /%span email:
+        /= link_to room.user.email, user_path(room.user.id)
+        /%td
+        /  = link_to '編集', edit_room_path(room)
+        /  = link_to '削除', room_path(room), method: :delete, data: { confirm: '削除しますか？' }

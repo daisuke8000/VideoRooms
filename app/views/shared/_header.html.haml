@@ -1,31 +1,34 @@
-%body
-  %header
-    %nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
-      / Left navbar links
-      %ul.navbar-nav
-        %li.nav-item
-          %a.nav-link{"data-widget" => "pushmenu", :href => "#"}
-            %i.fa.fa-bars
+.body
+  .wrapper
+  %nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+    %ul.navbar-nav
+      %li.nav-item
+        - if user_signed_in?
           %li.nav-item.d-none.d-sm-inline-block
-            %a.nav-link{ href: user_path(current_user.id) } MyRooms
+            = link_to 'PublicVideo', rooms_path, class: 'nav-link'
           %li.nav-item.d-none.d-sm-inline-block
-            %a.nav-link{ href: rooms_path } Public
+            = link_to 'Users', users_path, class: 'nav-link'
           %li.nav-item.d-none.d-sm-inline-block
-            %a.nav-link{ href: users_path } Users
+            = link_to 'MyPage', user_path(current_user.id), class: 'nav-link'
           %li.nav-item.d-none.d-sm-inline-block
-            %a.nav-link{ href: edit_user_registration_path } Edit
+            = link_to 'Account', edit_user_registration_path, class: 'nav-link'
           %li.nav-item.d-none.d-sm-inline-block
-            %a.nav-link{ href: destroy_user_session_path } Logout
-      %form.form-inline.ml-3
-        .input-group.input-group-sm
-          %input.form-control.form-control-navbar{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-          .input-group-append
-            %button.btn.btn-navbar{ type: "submit"}
-              %i.fa.fa-search
+            = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to "Sign up", new_user_registration_path, class: 'btn nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to "Log in", new_user_session_path, class: 'nav-link'
+    %form.form-inline.ml-3
+      .input-group.input-group-sm
+        %input.form-control.form-control-navbar{ arialabel: "Search", placeholder: "Search", type: "search"}/
+        .input-group-append
+          %button.btn.btn-navbar{ type: "submit"}
+            %i.fa.fa-search
   / Main Sidebar Container
   %aside.main-sidebar.sidebar-dark-primary.elevation-4
     / Brand Logo
-    %a.brand-link{:href => "index3.html"}
+    %a.brand-link{ href: "index3.html"}
       = image_tag "AdminLTELogo.png", alt: "AdminLTE Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8"
       %span.brand-text.font-weight-light AdminLTE 3
     / Sidebar
@@ -35,27 +38,27 @@
         .image
           = image_tag "user2-160x160.jpg", alt: "User Image", class: "img-circle elevation-2"
         .info
-          %a.d-block{:href => "#"} Alexander Pierce
+          %a.d-block{ href: "#"} Alexander Pierce
       / Sidebar Menu
       %nav.mt-2
-        %ul.nav.nav-pills.nav-sidebar.flex-column{"data-accordion" => "false", "data-widget" => "treeview", :role => "menu"}
+        %ul.nav.nav-pills.nav-sidebar.flex-column{ dataaccordion: "false", datawidget: "treeview", role: "menu"}
           %li.nav-item.has-treeview.menu-open
-            %a.nav-link.active{:href => "#"}
+            %a.nav-link.active{ href: "#"}
               %i.nav-icon.fa.fa-dashboard
               %p
                 Starter Pages
                 %i.right.fa.fa-angle-left
             %ul.nav.nav-treeview
               %li.nav-item
-                %a.nav-link.active{:href => "#"}
+                %a.nav-link.active{ href: "#"}
                   %i.fa.fa-circle-o.nav-icon
                   %p Active Page
               %li.nav-item
-                %a.nav-link{:href => "#"}
+                %a.nav-link{ href: "#"}
                   %i.fa.fa-circle-o.nav-icon
                   %p Inactive Page
           %li.nav-item
-            %a.nav-link{:href => "#"}
+            %a.nav-link{ href: "#"}
               %i.nav-icon.fa.fa-th
               %p
                 Simple Link

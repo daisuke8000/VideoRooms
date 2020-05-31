@@ -1,7 +1,20 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.erb
-- @users.each do |user|
-  %hr/
-  %p
-    %span email:
-    = link_to user.email, user_path(user.id)
+.content-wrapper
+  / Content Header (Page header)
+  .content-header
+    .container-fluid
+      .row.mb-2
+        .col-sm-6
+          %h1.m-0.text-dark Users
+  .table-container
+  %table.table.table-striped
+    %thead.bg-gradient-primary.text-white
+      %tr
+        %th.w-1 No.
+        %th.w-3 address
+        %th.w-5 pages
+    %tbody
+      - @users.each.with_index(1) do |user, i|
+        %tr
+          %td= i
+          %td= user.email
+          %td= link_to "info", user_path(user.id)
