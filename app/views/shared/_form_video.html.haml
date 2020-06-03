@@ -1,7 +1,20 @@
-= form_with model: [@room, @video], local: true do |f|
-  %p 動画の名前
-  = f.text_field :video_name
-  %p 動画のURLを入力
-  = f.text_field :youtube_url
-  = f.submit value: '送信'
-%p= link_to '部屋一覧', rooms_path
+.container-fluid
+  .row.mb-2
+  %hr
+    .col-sm-6
+      = form_with model: [@room, @video], local: true do |f|
+        %label 投稿する動画の名前
+        .form-group
+          = f.text_field :video_name, |
+          class: 'form-control', |
+          required: true  |
+        %label 動画のURLを入力
+        .form-group
+          = f.text_field :youtube_url, |
+            class: 'form-control', |
+            required: true  |
+        .form-group
+          = f.submit value: '送信', class: 'btn btn-primary'
+        %p= link_to '部屋の一覧画面へ戻る', rooms_path
+
+  %hr

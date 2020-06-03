@@ -1,20 +1,22 @@
-.content-wrapper
-  / Content Header (Page header)
-  .content-header
-    .container-fluid
-      .row.mb-2
-        .col-sm-6
-          %h1.m-0.text-dark Users
-  .table-container
-  %table.table.table-striped
-    %thead.bg-gradient-primary.text-white
-      %tr
-        %th.w-1 No.
-        %th.w-3 address
-        %th.w-5 pages
-    %tbody
-      - @users.each.with_index(1) do |user, i|
-        %tr
-          %td= i
-          %td= user.email
-          %td= link_to "info", user_path(user.id)
+.wrapper
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-0
+          %h1.m-0.text-dark ユーザー一覧
+          .table-container
+          %table.table.table-striped
+            %thead.bg-gradient-primary.text-white
+              %tr
+                %th.w-1 No.
+                %th.w-3 Address
+                %th.w-5 MyRooms
+            %tbody
+              - @users.each.with_index(1) do |user, i|
+                %tr
+                  %td= i
+                  %td= user.email
+                  %td= link_to "info", user_path(user.id)

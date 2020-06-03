@@ -1,0 +1,123 @@
+/%h1 Homes#Index
+/%p= link_to 'Rooms_Indexへ移動する', rooms_path
+/\# 画像対応版
+.wrapper
+  / Navbar
+  %nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+    / Left navbar links
+    %ul.navbar-nav
+      %li.nav-item
+        %a.nav-link{"data-widget" => "pushmenu", :href => "#"}
+          %i.fa.fa-bars
+      %li.nav-item.d-none.d-sm-inline-block
+        %a.nav-link{:href => "index3.html"} Home
+      %li.nav-item.d-none.d-sm-inline-block
+        %a.nav-link{:href => "#"} Contact
+    / SEARCH FORM
+    %form.form-inline.ml-3
+      .input-group.input-group-sm
+        %input.form-control.form-control-navbar{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        .input-group-append
+          %button.btn.btn-navbar{:type => "submit"}
+            %i.fa.fa-search
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+    / Brand Logo
+    %a.brand-link{:href => "index3.html"}
+      = image_tag "AdminLTELogo.png", alt: "AdminLTE Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8"
+      %span.brand-text.font-weight-light AdminLTE 3
+    / Sidebar
+    .sidebar
+      / Sidebar user panel (optional)
+      .user-panel.mt-3.pb-3.mb-3.d-flex
+        .image
+          = image_tag "user2-160x160.jpg", alt: "User Image", class: "img-circle elevation-2"
+        .info
+          %a.d-block{:href => "#"} Alexander Pierce
+      / Sidebar Menu
+      %nav.mt-2
+        %ul.nav.nav-pills.nav-sidebar.flex-column{"data-accordion" => "false", "data-widget" => "treeview", :role => "menu"}
+          /
+            Add icons to the links using the .nav-icon class
+            with font-awesome or any other icon font library
+          %li.nav-item.has-treeview.menu-open
+            %a.nav-link.active{:href => "#"}
+              %i.nav-icon.fa.fa-dashboard
+              %p
+                Starter Pages
+                %i.right.fa.fa-angle-left
+            %ul.nav.nav-treeview
+              %li.nav-item
+                %a.nav-link.active{:href => "#"}
+                  %i.fa.fa-circle-o.nav-icon
+                  %p Active Page
+              %li.nav-item
+                %a.nav-link{:href => "#"}
+                  %i.fa.fa-circle-o.nav-icon
+                  %p Inactive Page
+          %li.nav-item
+            %a.nav-link{:href => "#"}
+              %i.nav-icon.fa.fa-th
+              %p
+                Simple Link
+                %span.right.badge.badge-danger New
+      / /.sidebar-menu
+    / /.sidebar
+  / Content Wrapper. Contains page content
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            %h1.m-0.text-dark Starter Page
+          / /.col
+          .col-sm-6
+            %ol.breadcrumb.float-sm-right
+              %li.breadcrumb-item
+                %a{:href => "#"} Home
+              %li.breadcrumb-item.active Starter Page
+          / /.col
+        / /.row
+      / /.container-fluid
+    / /.content-header
+    / Main content
+    .content
+      .container-fluid
+        .row
+          .col-lg-6
+            .card
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            .card.card-primary.card-outline
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            .card
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            .card.card-primary.card-outline
+              .card-body
+                %h5.card-title Card title
+                %p.card-text
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                %a.card-link{:href => "#"} Card link
+                %a.card-link{:href => "#"} Another link
+            / /.card
+          / /.col-md-6
+
+

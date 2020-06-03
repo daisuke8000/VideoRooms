@@ -1,21 +1,25 @@
-.content-wrapper
-  / Content Header (Page header)
-  .content-header
-    .container-fluid
-      .row.mb-2
-        .col-sm-6
-          %h1.m-0.text-dark PublicVideo
-  - @rooms.each do |room|
-    .content
-      .row
-        .col-lg-6
-          .card.card-primary.card-outline
-            .card-body
-              %h5.card-title #{room.room_name}
-              %p.card-text
-                Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              %a.nav-link{ href: room_path(room.id) } ShowRoom
+.wrapper
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            %h1.m-0.text-dark シェアルーム
+            %button.btn.btn-default.m-1=link_to '新しい部屋を作る', new_room_path
+      .content
+        .row
+          - @rooms.each do |room|
+            .col-lg-6.d-flex
+              .card.card-primary.card-outline
+                .card-body
+                  %h1.card-title #{room.room_name}
+                  %p.card-text
+                    ココに入る内容は部屋を作成する際の情報を記載するところです。
+                    この部屋を何用にするか考えてみましょう。
+                  %button.btn.btn-default= link_to '部屋に入る', room_path(room.id)
+                  %button.btn.btn-outline-warning= link_to '部屋を削除する', room_path(room), method: :delete, data: { confirm: '削除しますか？' }
 
         /%span 部屋ID:
         /= room.id
@@ -24,5 +28,5 @@
         /%span email:
         /= link_to room.user.email, user_path(room.user.id)
         /%td
-        /  = link_to '編集', edit_room_path(room)
+        /   link_to '編=集', edit_room_path(room)
         /  = link_to '削除', room_path(room), method: :delete, data: { confirm: '削除しますか？' }
