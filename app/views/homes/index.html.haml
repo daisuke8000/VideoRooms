@@ -1,3 +1,13 @@
-= render 'shared/flash_messages'
-%h1 Homes#Index
-%p= link_to 'Rooms_Indexへ移動する', rooms_path
+.wrapper
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            %h1.m-0.text-dark WelcomePage
+        .content
+          .row.mb-2
+            .col-sm-6
+              %p= link_to '部屋一覧', rooms_path

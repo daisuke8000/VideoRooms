@@ -1,24 +1,26 @@
-%body
-  %header
-    %nav.navbar.navbar-expand.navbar-light
-      = link_to 'ホーム画面', root_path, class: 'navbar-brand'
-      #Navber
-        %ul.navbar-nav
-          - if user_signed_in?
-            %li.nav-item.active
-              = link_to '部屋の作成', new_room_path, class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'マイページ', user_path(current_user.id), class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'room一覧', rooms_path, class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'user一覧', users_path, class: 'nav-link'
-            %li.nav-item.active
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
-          - else
-            %li.nav-item.active
-              = link_to "新規登録", new_user_registration_path, class: 'btn nav-link'
-            %li.nav-item.active
-              = link_to "ログイン", new_user_session_path, class: 'nav-link'
+.wrapper
+  %nav.main-header.navbar.navbar-expand-sm.bg-white.navbar-light.border-bottom
+    %ul.navbar-nav
+      %li.nav-item
+        - if user_signed_in?
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to 'PublicRooms', rooms_path, class: 'nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to 'Users', users_path, class: 'nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to 'MyRooms', user_path(current_user.id), class: 'nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to 'Account', edit_user_registration_path, class: 'nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to "Sign up", new_user_registration_path, class: 'btn nav-link'
+          %li.nav-item.d-none.d-sm-inline-block
+            = link_to "Log in", new_user_session_path, class: 'nav-link'
+  / Main Sidebar Container
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+    / Brand Logo
+    %a.brand-link{:href => "/"}
+      = image_tag "AdminLTELogo.png", alt: "AdminLTE Logo", class: "brand-image img-circle elevation-3", style: "opacity: .8"
+      %span.brand-text.font-weight-light VideoRooms

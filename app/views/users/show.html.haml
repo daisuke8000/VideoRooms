@@ -1,11 +1,24 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.erb
-%hr/
-%p
-  %span email:
-  = @user.email
-- @rooms.each do |room|
-  %hr/
-  %p
-    %span 部屋名 :
-    = link_to room.room_name, room_path(room.id)
+.wrapper
+  %aside.main-sidebar.sidebar-dark-primary.elevation-4
+  .content-wrapper
+    / Content Header (Page header)
+    .content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-0
+          %h1.m-0.text-dark 作成した部屋
+          .table-container
+          %table.table.table-striped
+            %thead.bg-gradient-primary.text-white
+              %tr
+                %th.w-1 No.
+                %th.w-3 RoomName
+                %th.w-5 RoomLink
+            %tbody
+              - @rooms.each.with_index(1) do |room, i|
+                %tr
+                  %td= i
+                  %td= room.room_name
+                  %td= link_to "Go!", room_path(room.id)
+
+
