@@ -10,7 +10,7 @@ https://www.share-videoroom.net/
 - Ruby(2.6.6)｜Rails（6.0.2.2）
 - MySQL（5.7）
 - Nginx 1.12.2
-- Unicorn 5.5.5
+- Unicorn_rails 5.5.5
 - Haml
 - Sass
 ## Infrastructure
