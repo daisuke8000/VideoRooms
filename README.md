@@ -5,6 +5,9 @@ https://www.share-videoroom.net/
 
 [![Image from Gyazo](https://i.gyazo.com/5a98ddaeb3f8000700304e1036489a41.gif)](https://gyazo.com/5a98ddaeb3f8000700304e1036489a41)
 
+## ER図
+[![Image from Gyazo](https://i.gyazo.com/43e1d0f799570f95fe6f2bc12d1cad3c.png)](https://gyazo.com/43e1d0f799570f95fe6f2bc12d1cad3c)
+
 ## 言語、使用技術
 
 - Ruby(2.6.6)｜Rails（6.0.2.2）
@@ -14,5 +17,12 @@ https://www.share-videoroom.net/
 - Haml
 - Sass
 ## Infrastructure
+### AWS
 
-- AWS (VPC,EC2,RDS_for_Aurora,S3,Route53,ACM,ELB)
+- VPC
+- EC2
+- RDS_for_Aurora
+- S3
+- Route53
+- ACM
+- ELB
