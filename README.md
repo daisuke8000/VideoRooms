@@ -13,7 +13,7 @@ https://www.share-videoroom.net/
 - Ruby(2.6.6)｜Rails（6.0.2.2）
 - MySQL（5.7）
 - Nginx 1.12.2
-- Unicorn_rails 5.5.5
+~~- Unicorn_rails 5.5.5~~
 - Haml
 - Sass
 ## Infrastructure
@@ -21,8 +21,10 @@ https://www.share-videoroom.net/
 
 - VPC
 - EC2
-- RDS_for_Aurora
+- docker(rails6,mysql,nginx)
+- docker-compose
+~~- RDS_for_Aurora
 - S3
-- Route53
+~~- Route53
 - ACM
-- ELB
+~~- ELB
