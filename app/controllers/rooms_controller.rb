@@ -58,7 +58,7 @@ class RoomsController < ApplicationController
   #ストロングパラメータのカラム
   private
   def room_params
-    params.require(:room).permit(:room_name)
+    params.require(:room).permit(:room_name,:room_text)
   end
 
 end
