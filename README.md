@@ -22,9 +22,3 @@
 - EC2
 - docker(rails6,mysql,nginx)
 - docker-compose
-
-~~- RDS_for_Aurora
-- S3
-~~- Route53
-- ACM
-~~- ELB
