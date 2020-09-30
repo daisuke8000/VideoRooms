@@ -1,6 +1,5 @@
 ## PortFolioApp｜VideoRooms
 
-https://www.share-videoroom.net/
 >動画共有アプリ、YouTubeの動画を各部屋毎に設置することが出来る。
 
 [![Image from Gyazo](https://i.gyazo.com/5a98ddaeb3f8000700304e1036489a41.gif)](https://gyazo.com/5a98ddaeb3f8000700304e1036489a41)
@@ -23,6 +22,7 @@ https://www.share-videoroom.net/
 - EC2
 - docker(rails6,mysql,nginx)
 - docker-compose
+
 ~~- RDS_for_Aurora
 - S3
 ~~- Route53
